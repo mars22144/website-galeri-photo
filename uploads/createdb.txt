@@ -1,0 +1,64 @@
+CREATE DATABASE gallery;
+USE gallery;
+
+-- Table: user
+CREATE TABLE user (
+    UserID INT(11) AUTO_INCREMENT PRIMARY KEY,
+    Username VARCHAR(255) NOT NULL,
+    Password VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    NamaLengkap VARCHAR(255) NOT NULL,
+    Alamat TEXT,
+    Role ENUM('admin', 'user') NOT NULL DEFAULT 'user' -- Add Role column
+);
+
+-- Table: album
+CREATE TABLE album (
+    AlbumID INT(11) AUTO_INCREMENT PRIMARY KEY,
+    NamaAlbum VARCHAR(255) NOT NULL,
+    Deskripsi TEXT,
+    TanggalDibuat DATE,
+    UserID INT(11),
+    FOREIGN KEY (UserID) REFERENCES user(UserID) ON DELETE CASCADE
+);
+
+-- Table: foto
+CREATE TABLE foto (
+    FotoID INT(11) AUTO_INCREMENT PRIMARY KEY,
+    JudulFoto VARCHAR(255),
+    DeskripsiFoto TEXT,
+    TanggalUnggah DATE,
+    LokasiFile VARCHAR(255),
+    AlbumID INT(11),
+    UserID INT(11),
+    FOREIGN KEY (AlbumID) REFERENCES album(AlbumID) ON DELETE CASCADE,
+    FOREIGN KEY (UserID) REFERENCES user(UserID) ON DELETE CASCADE
+);
+
+-- Table: komentar_foto
+CREATE TABLE komentarfoto (
+    KomentarID INT(11) AUTO_INCREMENT PRIMARY KEY,
+    FotoID INT(11),
+    UserID INT(11),
+    IsiKomentar TEXT,
+    TanggalKomentar DATE,
+    FOREIGN KEY (FotoID) REFERENCES foto(FotoID) ON DELETE CASCADE,
+    FOREIGN KEY (UserID) REFERENCES user(UserID) ON DELETE CASCADE
+);
+
+-- Table: like_foto
+CREATE TABLE likefoto (
+    LikeID INT(11) AUTO_INCREMENT PRIMARY KEY,
+    FotoID INT(11),
+    UserID INT(11),
+    TanggalLike DATE,
+    FOREIGN KEY (FotoID) REFERENCES foto(FotoID) ON DELETE CASCADE,
+    FOREIGN KEY (UserID) REFERENCES user(UserID) ON DELETE CASCADE
+);
+
+
+session_start();
+if (!isset($_SESSION["user_id"])) {
+    header('Location: login.php'); // Redirect to login if not authenticated
+    exit();
+}
