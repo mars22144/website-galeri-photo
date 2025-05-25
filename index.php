@@ -21,7 +21,7 @@ if ($albums->num_rows > 0) {
         if ($photoResult->num_rows > 0) {
             $photos[$albumId] = $photoResult->fetch_all(MYSQLI_ASSOC);
         } else {
-            $photos[$albumId] = []; // Empty array if no photos for the album
+            $photos[$albumId] = []; 
         }
     }
     // Move the result pointer back to the beginning of the albums query
@@ -213,30 +213,30 @@ if ($albums->num_rows > 0) {
         }
 
         .upload-button {
-            position: fixed; /* Agar tetap di posisi tetap */
-            bottom: 30px; /* Jarak dari bawah */
-            right: 30px; /* Jarak dari kanan */
+            position: fixed; 
+            bottom: 30px;
+            right: 30px; 
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .rounded-button {
-            background-color: #FFBF78; /* Warna tombol */
-            color: white; /* Warna teks */
-            width: 60px; /* Lebar tombol */
-            height: 60px; /* Tinggi tombol */
-            border-radius: 50%; /* Membuat tombol bulat */
+            background-color: #FFBF78;
+            color: white;
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%; 
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan tombol */
-            transition: background-color 0.3s, transform 0.3s; /* Animasi saat hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+            transition: background-color 0.3s, transform 0.3s; 
         }
 
         .rounded-button:hover {
-            background-color: #FF7D29; /* Warna saat hover */
-            transform: translateY(-3px); /* Efek angkat saat hover */
+            background-color: #FF7D29; 
+            transform: translateY(-3px); 
             color: black;
         }
 

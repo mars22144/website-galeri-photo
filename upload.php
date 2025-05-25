@@ -159,26 +159,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         /* Main Styles */
         main {
-            margin: 80px auto; /* Adjusted for fixed navbar */
+            margin: 80px auto; 
             padding: 20px;
             max-width: 600px;
-            background-color: #ffffff; /* White background for the main content */
+            background-color: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            font-size: 280px; /* Increased font size for the title */
-            color: #2c3e50; /* Darker shade for better contrast */
+            font-size: 280px; 
+            color: #2c3e50; 
             margin-bottom: 20px;
-            text-align: center; /* Centering the title */
-            border-bottom: 2px solid #FFBF78; /* Underline effect for the title */
-            padding-bottom: 10px; /* Padding for spacing */
+            text-align: center; 
+            border-bottom: 2px solid #FFBF78;
+            padding-bottom: 10px; 
         }
 
         .form-group {
             margin-bottom: 2px;
-            padding: 10px 0; /* Add padding for spacing */
+            padding: 10px 0; 
         }
 
         label {
@@ -193,41 +193,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         select,
         input[type="file"] {
             width: 100%;
-            padding: 12px; /* Increased padding for better touch target */
+            padding: 12px; 
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
             font-size: 16px;
-            transition: border-color 0.3s; /* Smooth transition for border color */
+            transition: border-color 0.3s; 
         }
 
         input[type="text"]:focus,
         textarea:focus,
         select:focus,
         input[type="file"]:focus {
-            border-color: #C0C78C; /* Highlight border on focus */
-            outline: none; /* Remove default outline */
+            border-color: #C0C78C; 
+            outline: none; 
         }
 
         input[type="submit"] {
             background-color: black;
             color: white;
-            padding: 12px 20px; /* Increased padding for button */
+            padding: 12px 20px; 
             border: none;
             border-radius: 4px;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+            transition: background-color 0.3s, transform 0.2s; 
         }
 
         input[type="submit"]:hover {
             background-color: white;
             color: black;
-            transform: translateY(-2px); /* Slight lift effect on hover */
+            transform: translateY(-2px); 
         }
 
         input[type="submit"]:active {
-            transform: translateY(0); /* Reset lift effect when clicked */
+            transform: translateY(0); 
         }
 
         /* Footer */

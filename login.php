@@ -22,17 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result && $result->num_rows == 1) {
         $row = $result->fetch_assoc();
-        // Verifikasi password menggunakan bcrypt
         if (password_verify($password, $row["Password"])) {
-            // Login sukses, set session
             $_SESSION["user_id"] = $row["UserID"];
             $_SESSION["username"] = $row["Username"];
             $_SESSION["role"] = $row["Role"];
 
-            // Debugging output
-            // echo "<div>Login successful. Redirecting...</div>"; // Hapus untuk produksi
-
-            // Redirect berdasarkan role
             if ($row["Role"] == 'admin') {
                 header('Location: admin_dashboard.php');
             } else {

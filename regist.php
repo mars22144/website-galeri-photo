@@ -1,13 +1,12 @@
 <?php
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Ambil data dari form dan sanitasi input
     $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
     $username = filter_var($_POST["username"], FILTER_SANITIZE_STRING);
-    $password = password_hash($_POST["password"], PASSWORD_BCRYPT); // Hash password menggunakan bcrypt
+    $password = password_hash($_POST["password"], PASSWORD_BCRYPT); 
     $nama_lengkap = filter_var($_POST["nama_lengkap"], FILTER_SANITIZE_STRING);
     $alamat = filter_var($_POST["alamat"], FILTER_SANITIZE_STRING);
-    $role = $_POST["role"]; // Ambil peran dari form
+    $role = $_POST["role"]; 
 
     // Sambungkan ke database
     $conn = new mysqli("localhost", "root", "", "gallery");
@@ -24,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // Username sudah tersedia, tampilkan alert dan redirect kembali ke regist.php
         echo "<script>
                 alert('Username sudah digunakan, silakan pilih username lain.');
                 window.location.href = 'regist.php';

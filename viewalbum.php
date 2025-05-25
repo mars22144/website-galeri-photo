@@ -153,8 +153,7 @@ $fotos = $result_foto->fetch_all(MYSQLI_ASSOC);
 
         .photo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(345px, 1fr)); /* Sesuaikan min-width card agar lebih besar */
-            gap: 45px;
+            grid-template-columns: repeat(auto-fill, minmax(345px, 1fr)); 
             justify-content: space-between;
             margin: 50px auto;
             max-width: 1200px;
@@ -169,16 +168,16 @@ $fotos = $result_foto->fetch_all(MYSQLI_ASSOC);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            width: 100%; /* Mengisi seluruh lebar kolom */
-            max-width: 100%; /* Pastikan lebar maksimal mengikuti kolom grid */
-            box-sizing: border-box; /* Pastikan padding dan border tidak menambah ukuran card */
+            width: 100%; 
+            max-width: 100%; 
+            box-sizing: border-box; 
         }
 
         /* Menambahkan padding pada img untuk konsistensi */
         .photo-card img {
-            width: 100%; /* Memastikan gambar mengisi lebar kontainer */
-            height: 300px; /* Tetapkan tinggi tetap untuk gambar */
-            object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+            width: 100%;
+            height: 300px; 
+            object-fit: cover; 
             border-radius: 8px;
         }
 
@@ -241,27 +240,27 @@ $fotos = $result_foto->fetch_all(MYSQLI_ASSOC);
 
         .like-btn:hover,
         .comment-btn:hover {
-            background-color: #FF7D29;; /* Warna saat hover untuk like button */
+            background-color: #FF7D29;;
         }
 
         .comment-btn:hover {
-            background-color: #FEFFD2; /* Warna saat hover untuk comment button */
+            background-color: #FEFFD2; 
             color: black; 
         }
 
         input[type="text"] {
-            width: 200px; /* Set a fixed width for uniformity */
-            padding: 8px; /* Add padding for better appearance */
-            border: 1px solid #ccc; /* Add a border */
-            border-radius: 4px; /* Rounded corners */
-            box-sizing: border-box; /* Ensure padding and border are included in total width */
-            transition: border-color 0.3s; /* Smooth transition for focus effect */
+            width: 200px;
+            padding: 8px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            box-sizing: border-box;
+            transition: border-color 0.3s; 
         }
 
         /* Focus effect */
         input[type="text"]:focus {
-            border-color: #2563EB; /* Change border color on focus */
-            outline: none; /* Remove default outline */
+            border-color: #2563EB; 
+            outline: none; 
         }
 
         /* Footer */
@@ -282,12 +281,12 @@ $fotos = $result_foto->fetch_all(MYSQLI_ASSOC);
 
         .dropdown-menu {
             display: none;
-            position: absolute; /* Pastikan ini absolute */
+            position: absolute; 
             z-index: 1000;
             min-width: 160px;
-            top: 100%; /* Posisikan dropdown di bawah tombol */
-            right: 0; /* Menjaga dropdown tetap terhadap tombol */
-            margin-top: 5px; /* Jarak antara dropdown dan tombol */
+            top: 100%; 
+            right: 0; 
+            margin-top: 5px; 
         }
     </style>
 </head>
@@ -411,11 +410,10 @@ $fotos = $result_foto->fetch_all(MYSQLI_ASSOC);
 
     <script>
         function toggleDropdown(dropdownId) {
-            // Menyembunyikan dropdown lainnya
             const dropdowns = document.querySelectorAll('.dropdown-menu');
             dropdowns.forEach(dropdown => {
                 if (dropdown.id !== dropdownId) {
-                    dropdown.style.display = 'none'; // Sembunyikan dropdown lain
+                    dropdown.style.display = 'none'; 
                 }
             });
 
