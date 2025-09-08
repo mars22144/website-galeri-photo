@@ -1,5 +1,5 @@
 # How to Install
-1. type this at cmd
+1. type this at cmd inside folder htdocs(if you use xampp) or www(if you use laragon)
    ```git clone https://github.com/mars22144/website-galeri-photo.git```
 2. and type this
    ```cd website-galeri-photo```
